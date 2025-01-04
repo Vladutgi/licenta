@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  mongo_container:
+    image: mongo
+    restart: unless-stopped
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: PtLicenta
+    volumes:
+      - ./mongoDb:/data/db
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro

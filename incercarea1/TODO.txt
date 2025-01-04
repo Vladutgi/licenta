@@ -1,0 +1,29 @@
+﻿
+
+Sa adaug un spinner sau un progressbar pentru loading
+sa adaug in partea de printare afisarea numarului total
+
+
+
+// sa intreb daca ar trebui sa ma joc cu paint-ul (cum am facut in tabul useri)
+
+
+
+
+
+INFO:
+
+taburile trebuie sa aiba nume diferit de variabile, chiar daca sunt inner
+sa folosesc settings pentru connstring
+
+
+
+
+
+
+
+
+
+
+
+
