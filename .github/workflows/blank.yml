@@ -1,0 +1,26 @@
+name: Sync to Azure DevOps
+
+on:
+  push:
+    branches:
+      - main  # Set this to whatever branch you want to sync
+
+jobs:
+  sync-to-azure:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout GitHub repo
+      uses: actions/checkout@v2
+      
+    - name: Set up Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "actions@github.com"
+      
+    - name: Push changes to Azure DevOps
+      run: |
+        git remote add azure https://dev.azure.com/vladutgi/incercare1/_git/incercarea1.git
+        git push azure master
+      env:
+        AZURE_DEVOPS_USERNAME: ${{ secrets.AZURE_DEVOPS_USERNAME }}
+        AZURE_DEVOPS_PASSWORD: ${{ secrets.AZURE_DEVOPS_PASSWORD }}
