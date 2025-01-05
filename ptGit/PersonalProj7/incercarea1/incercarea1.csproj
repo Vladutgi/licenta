@@ -40,6 +40,9 @@
     <None Include="Dependencies\libmongocrypt.dylib" />
     <None Include="Dependencies\libmongocrypt.so" />
     <None Include="Dependencies\packages.config" />
+    <None Include="libmongocrypt.dylib" />
+    <None Include="libmongocrypt.so" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\Form2.datasource" />
     <None Include="Settings1.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -202,8 +205,8 @@
     <Reference Include="MongoDB.Driver.Core, Version=2.24.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\MongoDB.Driver.Core.2.24.0\lib\net472\MongoDB.Driver.Core.dll</HintPath>
     </Reference>
-    <Reference Include="MongoDB.Libmongocrypt, Version=1.8.2.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MongoDB.Libmongocrypt.1.8.2\lib\netstandard2.0\MongoDB.Libmongocrypt.dll</HintPath>
+    <Reference Include="MongoDB.Libmongocrypt, Version=1.12.0.0, Culture=neutral, PublicKeyToken=94992a530f44e321, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoDB.Libmongocrypt.1.12.0\lib\net472\MongoDB.Libmongocrypt.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=8.1.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <HintPath>..\packages\MySql.Data.8.1.0\lib\net462\MySql.Data.dll</HintPath>
@@ -456,6 +459,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Dependencies\mongocrypt.dll" />
+    <Content Include="mongocrypt.dll" />
     <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
@@ -469,5 +473,7 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MongoDB.Libmongocrypt.1.12.0\build\MongoDB.Libmongocrypt.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MongoDB.Libmongocrypt.1.12.0\build\MongoDB.Libmongocrypt.targets'))" />
   </Target>
+  <Import Project="..\packages\MongoDB.Libmongocrypt.1.12.0\build\MongoDB.Libmongocrypt.targets" Condition="Exists('..\packages\MongoDB.Libmongocrypt.1.12.0\build\MongoDB.Libmongocrypt.targets')" />
 </Project>
