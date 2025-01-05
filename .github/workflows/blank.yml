@@ -24,3 +24,4 @@ jobs:
       run: |
         git remote add azure https://dev.azure.com/vladutgi/incercare1/_git/licenta.git
         git push azure master  # Make sure this is the correct branch you want to push to
+
