@@ -21,7 +21,7 @@ jobs:
     - name: Add and Push to Azure DevOps Remote
       run: |
         # Add the Azure DevOps remote using username and PAT
-        git remote add azure https://${{ secrets.AZURE_DEVOPS_USERNAME }}:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta
+        git remote add azure https://${{ secrets.AZURE_DEVOPS_USERNAME }}:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
         
         # Verify the remote URL
         git remote -v
