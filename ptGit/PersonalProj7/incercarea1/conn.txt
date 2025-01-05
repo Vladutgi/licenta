@@ -1,0 +1,1 @@
+mongodb+srv://vladutgidearo:pdpkmFFwxp3UrCO2@licenta.jso0mzr.mongodb.net/
