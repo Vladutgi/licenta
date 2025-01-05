@@ -19,10 +19,7 @@ jobs:
         git config --global user.email "actions@github.com"
       
     - name: Push changes to Azure DevOps
-      env:
-        AZURE_DEVOPS_USERNAME: ${{ secrets.AZURE_DEVOPS_USERNAME }}
-        AZURE_DEVOPS_PASSWORD: ${{ secrets.AZURE_DEVOPS_PASSWORD }}
       run: |
         # Add the Azure DevOps remote using username and PAT for authentication
-        git remote add azure https://$AZURE_DEVOPS_USERNAME:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
-        git push azure master  
+        git remote add azure https://${{ secrets.AZURE_DEVOPS_USERNAME }}:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
+        git push azure master  # Push to the master branch
