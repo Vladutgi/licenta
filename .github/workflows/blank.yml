@@ -19,7 +19,7 @@ jobs:
       
     - name: Push changes to Azure DevOps
       run: |
-        git remote add azure https://dev.azure.com/vladutgi/incercare1/_git/incercarea1.git
+        git remote add azure https://dev.azure.com/vladutgi/incercare1/_git/licenta.git
         git push azure master
       env:
         AZURE_DEVOPS_USERNAME: ${{ secrets.AZURE_DEVOPS_USERNAME }}
