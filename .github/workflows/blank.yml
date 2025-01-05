@@ -3,11 +3,12 @@ name: Sync to Azure DevOps
 on:
   push:
     branches:
-      - master  # Set this to whatever branch you want to sync
+      - master  
 
 jobs:
   sync-to-azure:
     runs-on: windows-latest
+    environment: envi  
     steps:
     - name: Checkout GitHub repo
       uses: actions/checkout@v2
@@ -22,6 +23,6 @@ jobs:
         AZURE_DEVOPS_USERNAME: ${{ secrets.AZURE_DEVOPS_USERNAME }}
         AZURE_DEVOPS_PASSWORD: ${{ secrets.AZURE_DEVOPS_PASSWORD }}
       run: |
+        # Add the Azure DevOps remote using username and PAT for authentication
         git remote add azure https://$AZURE_DEVOPS_USERNAME:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
-        git push azure master  # Make sure this is the correct branch you want to push to
-
+        git push azure master  
