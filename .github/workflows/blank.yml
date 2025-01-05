@@ -26,6 +26,11 @@ jobs:
         # Verify the remote URL
         git remote -v
 
+    - name: Debug Remote Connectivity
+      run: |
+        # Check if remote is accessible
+        git ls-remote https://${{ secrets.AZURE_DEVOPS_USERNAME }}:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
+
     - name: Push to Azure DevOps
       run: |
         # Push the changes to Azure DevOps master branch
