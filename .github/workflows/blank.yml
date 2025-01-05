@@ -22,6 +22,6 @@ jobs:
         AZURE_DEVOPS_USERNAME: ${{ secrets.AZURE_DEVOPS_USERNAME }}
         AZURE_DEVOPS_PASSWORD: ${{ secrets.AZURE_DEVOPS_PASSWORD }}
       run: |
-        git remote add azure https://$AZURE_DEVOPS_USERNAME:${{ secrets.AZURE_DEVOPS_PAT }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
+        git remote add azure https://$AZURE_DEVOPS_USERNAME:${{ secrets.AZURE_DEVOPS_PASSWORD }}@dev.azure.com/vladutgi/incercare1/_git/licenta.git
         git push azure master  # Make sure this is the correct branch you want to push to
 
